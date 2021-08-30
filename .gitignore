@@ -1,0 +1,9 @@
+*.db
+*.deb
+*.lnk
+*.db:encryptable
+*.deb
+*.cdl
+*:Zone.Identifier
+**/roms
+*.xlsx
