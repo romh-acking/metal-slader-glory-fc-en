@@ -35,8 +35,8 @@ He sells books detailing the games' development, including the 64DD prequel. You
 * roms
 	* Use this to store your roms
 	* Apply the beat patch named Expand.bps
-		* Dumps online commonly have an incorrect header which indicate the game uses a battery backup when it does not. Change 0x6 from $52 to $50 to correct this. The header should be as follows before patching:
-		* `4E 45 53 1A 20 40 50 08 00 00 0A 09 00 00 00 00`
+		* Dumps online commonly have an incorrect header which indicate the game uses a battery backup when it does not. Change `0x6` from `$52` to `$50` to correct this. The header should be as follows before patching:
+		* `4E 45 53 1A 20 40 50 00 00 00 00 00 00 00 00 00`
 * script
 	* Contains the dump script in Script.json. It contains the Japanese script and the English translation.
 	* You can also store xlsx backups of the script here.
@@ -47,6 +47,7 @@ He sells books detailing the games' development, including the 64DD prequel. You
 		* Files prefixed with "SquishyText" do some find and replace functions
 			* "SquishyText - New.tbl" replaces character patterns to be in one tile. For example, "ll" is converted to the character "[ll]".
 			* "SquishyText - Original.tbl" merges the dakuten and handakuten diacritics into the Japanese characters to form a single character. The game is weird about diactrics. For one, the diactrics appear before the character they belong to. Also, dictionaries can contain diactrics that aren't associated with a character in the dictionary itself. This means we can't simply specify "が" in a table file, but apply the conversation after the script has been dumped.
+		* Files with "Length" let you specify how wide, in pixels, characters are. This affects `spiro.exe`'s autolinebreaking logic. For a game without VWF, most characters should have a length of `8`. 
 * tools
 	* cyproAce
 		* A script editor 
