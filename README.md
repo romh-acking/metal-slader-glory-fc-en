@@ -112,11 +112,11 @@ Here's the output of the program (a handful of false positives were exluded):
 0168: {85} {81}					Opening credits timing change
 0169: {8A} {86}					Opening credits timing change
 0326: (CODE 05) (STOP)				Timing adjustment
-0360: [Heart] (End quote)			The ordering of the heart character is different. This is a false positive.
+0360: [Heart] (End quote)			A heart was added to indicate Azusa talks in a similar manner as Ai does.
 0493: (CODE 61 Azusa no namecard:) (CODE 40)	Utilizes Azusa's namecard that doesn't have a Japanese start quote.
 0555: (CODE 05) (STOP)				Timing adjustment
 0627: (CODE 05) (STOP)				Timing adjustment
-1045: (CODE 10 Portrait) [Heart]		A heart was added to indicate Azusa talks in a similar manner as Ai does.
+1045: (CODE 10 Portrait) [Heart]		The ordering of the heart character is different. This is a false positive.
 1087: (CODE 05) (CODE 03)			The text printing is slowed and then sped up with `(CODE 05){81}(CODE 05){80}`
 						The game's engine has a glitch for typewriter printing text on the upper
 						half of the screen. It will print a few character for a split second,
