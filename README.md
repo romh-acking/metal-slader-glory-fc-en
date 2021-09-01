@@ -68,6 +68,78 @@ The tools are coded in C#. You'll have to mess with Wine if you want them to run
     * Apply the Expand.bps patch to a Japanese rom, rename the result to "Metal Slader Glory (J) (Trans).nes", and place it in the roms folder. (This should probably be handled by xkas...)
     * Execute the bat file "Write.bat" by double clicking it.
 
+### Translation Notes
+If you desire to use this repository as a base for another translation in a language other than English, some work will have to be done.
+
+* To add support for more characters:
+	1. Add the characters to some table files: `CHR - New.tbl` and `CHR - Length.tbl`.
+	1. The translation currently assumes the top and bottom graphics for a character are on top of each other. Some 6502 knowledge is required to change this limitation. The routine to adjust is called `Font8x16`. You'll want to create a table which maps a character value to the desired tiles in the PPU.
+	1. If you want new routines in banks 16 and 17, you'll have to make room in the jump table, which I believe was filled to the brim.
+* You'll probably want to remove the asm code that disables the autolinebreaking on the top of the screen. This will let you have multiple lines for the top text for the final battle in stage 7. Having meaningful text all fit in one line for certain languages can be difficult.
+
+You'll have to change the text on the following screens:
+* Game Over
+* Screen timing tweak
+* Credits
+
+The tilemaps are compressed. You'll either have to edit this by hand or create a compressor.
+
+You'll want to create a script to verify if you accidently deleted or added control codes from your translation. The original Japanese and your translation are on the same node in the script json so it makes it a bit easier to programmatically compare. This translaton intentionally adds control codes. For example:
+* Enkai's lines have a few added `(WAIT)` tags since he talks fast and uses complex vocabulary (since he's the stereptyical smart character)
+	* You may wan to remove these and opt on slowing his text down. All character's text speed's are located in the namecard.
+* Some control codes were added to the intro's green text to make it scroll.
+* `(CODE 05)` is a control code for pauses. It was added or had it argument changed to adjust the timing of cutscenes.  
+
+
+A script that indentifies control code differences was developed for an older version of the utility. It returns an output once it encounters a control code difference. 
+
+Here's the output of the program (a handful of false positives were exluded):
+
+```
+0062: (CODE 03) (CODE 4B Green text)		Makes the text scroll in the intro to accomodate for longer text
+0065: {86} {82}					Intro cutscene timing change
+0157: {86} {84}					Opening credits timing change
+0158: {83} {81}					Opening credits timing change
+0159: {88} {86}					Opening credits timing change
+0160: {83} {81}					Opening credits timing change
+0161: {88} {86}					Opening credits timing change
+0162: {84} {81}					Opening credits timing change
+0163: {89} {85}					Opening credits timing change
+0164: {85} {81}					Opening credits timing change
+0165: {89} {85}					Opening credits timing change
+0166: {85} {81}					Opening credits timing change
+0167: {89} {85}					Opening credits timing change
+0168: {85} {81}					Opening credits timing change
+0169: {8A} {86}					Opening credits timing change
+0326: (CODE 05) (STOP)				Timing adjustment
+0360: [Heart] (End quote)			The ordering of the heart character is different. This is a false positive.
+0493: (CODE 61 Azusa no namecard:) (CODE 40)	Utilizes Azusa's namecard that doesn't have a Japanese start quote.
+0555: (CODE 05) (STOP)				Timing adjustment
+0627: (CODE 05) (STOP)				Timing adjustment
+1045: (CODE 10 Portrait) [Heart]		A heart was added to indicate Azusa talks in a similar manner as Ai does.
+1087: (CODE 05) (CODE 03)			The text printing is slowed and then sped up with `(CODE 05){81}(CODE 05){80}`
+						The game's engine has a glitch for typewriter printing text on the upper
+						half of the screen. It will print a few character for a split second,
+						delete them, and write them again. Yoshimiru must've be aware of this
+						as the text in this cutscene, and other ones, have a two space indent.
+						This issue can be alleviated by slowing the text speed to prevent the 
+						characters from being printed and them returning the speed back to normal.					
+1310: {03} {0F}					This speeds up the text speed slowdown when Elina's deep in thought.
+2086: (CODE 05) (CODE 52)			Fixes the same issue in "1087"
+2089: (CODE 05) (CODE 07)			Fixes the same issue in "1087"
+2090: (CODE 05) (CODE 07)			Fixes the same issue in "1087"
+2168: [Note] (End quote)			Added the note emoticon
+2581: (STOP) (CODE 10 Portrait)			Some text was moved to adjust the cutscene music timing
+2582: (CODE 10 Portrait) (CODE 20 Tadashi:)	Same as above
+2587: {87} {30}					Final cutscene timing change
+2588: (CODE 05) (STOP)				Final cutscene timing change
+2617: {c8} {60}					This changes when the timer starts
+```
+
+Feel free to remove these control codes changes or adjust them to suit your needs. Don't remove the `(End quote)` control code. The end quote character is already invisible and there's a few adjustements that make this character as if it doesn't exist:
+* The length table file has this character's length set to 0
+* There's an asm code patch that disables autolinebreaking in the game's engine.
+
 ## Changelog
 * 2021 August 30th: 1.0
     * Initial release
