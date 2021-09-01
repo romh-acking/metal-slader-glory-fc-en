@@ -5,8 +5,7 @@ set newImage=roms\Metal Slader Glory (NEW).nes
 ::Folders
 set projectFolder=%cd%
 set SpiroFolder=%cd%\tools\spiro
-
-set XkasFolder=C:\Users\PC\Documents
+set XkasFolder=%cd%\tools\xkas
 
 cd "%projectFolder%"
 
