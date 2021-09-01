@@ -94,7 +94,7 @@ You'll want to create a script to verify if you accidently deleted or added cont
 
 A script that indentifies control code differences was developed for an older version of the utility. It returns an output once it encounters a control code difference. 
 
-Here's the output of the program (a handful of false positives were exluded):
+Here's the output of the program (a handful of false positives were exluded as well as instances with `(WAIT)`):
 
 ```
 0062: (CODE 03) (CODE 4B Green text)		Makes the text scroll in the intro to accomodate for longer text
