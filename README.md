@@ -70,6 +70,8 @@ The tools are coded in C#. You'll have to mess with Wine if you want them to run
     * Execute the bat file "Write.bat" by double clicking it.
 
 ### Translation Notes
+The development team is willing to provide guidance and assistance for other translation projects, however, we ask that you at least have basic technical skills, knowledge about romhacking (6502 assembly language knowledge, the capability to use a debugger, etc.), and the ability to ask intelligence questions.
+
 If you desire to use this repository as a base for another translation in a language other than English, some work will have to be done.
 
 * To add support for more characters:
@@ -86,7 +88,7 @@ You'll have to change the text on the following screens:
 The tilemaps are compressed. You'll either have to edit this by hand or create a compressor.
 
 You'll want to create a script to verify if you accidently deleted or added control codes from your translation. The original Japanese and your translation are on the same node in the script json so it makes it a bit easier to programmatically compare. This translaton intentionally adds control codes. For example:
-* Enkai's lines have a few added `(WAIT)` tags since he talks fast and uses complex vocabulary (since he's the stereptyical smart character)
+* Enkai's lines have a few added `(WAIT)` tags since he talks fast and uses complex vocabulary (because he's the stereptyical smart character)
 	* You may wan to remove these and opt on slowing his text down. All character's text speed's are located in the namecard.
 * Some control codes were added to the intro's green text to make it scroll.
 * `(CODE 05)` is a control code for pauses. It was added or had it argument changed to adjust the timing of cutscenes.  
