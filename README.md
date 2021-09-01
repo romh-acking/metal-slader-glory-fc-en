@@ -140,6 +140,8 @@ Feel free to remove these control codes changes or adjust them to suit your need
 * The length table file has this character's length set to 0
 * There's an asm code patch that disables autolinebreaking in the game's engine.
 
+Removing the end quotes will messe with various character animations. Most apparent are the character's mouths never closing. Certain character animations won't play at times and in rare instances obvious onscreen graphical glitching will occur.
+
 ## Changelog
 * 2021 August 30th: 1.0
     * Initial release
