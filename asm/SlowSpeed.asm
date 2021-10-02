@@ -1,7 +1,5 @@
 arch nes.cpu
 
-
-
 //==============================
 //BANK 30
 //==============================
@@ -9,81 +7,50 @@ banksize $4000
 bank 30
 
 //==============================
-//Scrolling text speed B
+//Skip voice A
 //==============================
-org $3EB6 //0x7BEB6
-ScrollingTextSpeed:
-INC $045A
-INC $045A
-JMP $8E29
+org $39BB // 0x7B9BB
+JSR $9A44
+//==============================
+//Max B speed A
+//==============================
+lda $062D
+//==============================
+//Skip voice (Top dialogue box) A
+//==============================
+org $3A07 // 0x7BA07
+JSR $9A44
+
 
 //==============================
-//Text speed (Top dialogue box) B
+//Text speed
+//(Top dialogue box) A
 //==============================
-TextSpeedReport:
-PLA
-CMP #$01
-BEQ exit
-nop
-exit:
-STA $4B
-JMP $9005
-
-//==============================
-//Skip voice B
-//==============================
-org $3EDF
-SkipVoice:
-
-txa
-pha
-
-//Check if current character to write isn't a space
-//if it is, don't increment our counter
-ldx $10
-lda $04A9,x
-cmp #$FE
-beq dontIncrement
-INC $02
-dontIncrement:
-
+// Control codes in dialogue will also have to be adjusted
+org $3012 // 0x7B012
 pla
-tax
-
-LDA $02
-AND #$01
-BEQ ExitSkipVoice
-RTS
-ExitSkipVoice:
-JMP $9A44
-//==============================
-//Skip voice (Top dialogue box) B
-//==============================
-SkipVoiceReport:
-INC $05
-LDA $05
-AND #$03
-BEQ ExitSkipVoiceReport
-RTS
-ExitSkipVoiceReport:
-JMP $9A44
+sta $4b
 
 //==============================
-//BANK 38 (Extension of bank 31)
+//BANK 31
 //==============================
 banksize $4000
-bank 56
+bank 31
+
 //==============================
-//Text speed  B
+//Text speed A
 //==============================
-org $0069
-TextSpeed:
-LDA $046D,y
-AND #$0F
-lsr
-nop
-STA $2E
-STA $FE
+org $18DB // 0x7D8DB
+lda $046d,y
+and #$0f
+sta $2e
+
+//==============================
+//Password text speed A
+//==============================
+org $1B46 // 0x7DB46
+and #$0f
+sta $2e
 
 
 
