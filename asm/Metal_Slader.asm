@@ -258,7 +258,7 @@ db $9F
 //Emergency countdown period fix
 //==============================
 org $312E // 0x7B12E
-db $14
+db $fa
 //==============================
 //Portrait shadows fix A
 //==============================
