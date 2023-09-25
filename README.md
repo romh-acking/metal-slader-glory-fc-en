@@ -66,7 +66,7 @@ The tools are coded in C#. You'll have to mess with Wine if you want them to run
 
 * If you want to dump the script for whatever reason (the Japanese and English script are already included in this repository), you can dump it by executing the bat file "Dump.bat" by double clicking it.
 * To generate an NES rom file with the translation and patches included:
-    * Apply the Expand.bps patch to a Japanese rom, rename the result to "Metal Slader Glory (J) (Trans).nes", and place it in the roms folder. (This should probably be handled by xkas...)
+    * Apply the Expand.bps patch to a Japanese rom, rename the result to "Metal Slader Glory (Japan) (Trans).nes", and place it in the roms folder. (This should probably be handled by xkas...)
     * Execute the bat file "Write.bat" by double clicking it.
 
 ### Translation Notes

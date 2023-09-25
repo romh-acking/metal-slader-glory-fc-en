@@ -5,5 +5,4 @@
 *.deb
 *.cdl
 *:Zone.Identifier
-**/roms
 *.xlsx

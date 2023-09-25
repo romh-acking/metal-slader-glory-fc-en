@@ -1,7 +1,8 @@
 {
+	"SpiroVersion": 2,
     "Files":
     {
-        "Original": ".\\roms\\Metal Slader Glory (J).nes",
+        "Original": ".\\roms\\Metal Slader Glory (Japan).nes",
         "New": ".\\roms\\Metal Slader Glory (NEW).nes"
     },
     "Scripts":
@@ -278,7 +279,7 @@
                     "DictionaryInteractions": [ "CHR" ],
                     "IsDictionary": true,
                     "CHRFile": ".\\tables\\CHR",
-                    "DictionaryTemplateFile": ".\\tables\\Dictionary",
+                    "DictionaryFile": ".\\tables\\Dictionary",
                     "MirrorBlankDictionaryEntries": false,
                     "SquishyTextFile": ".\\tables\\SquishyText",
                     "PixelsPerLine": 0,
@@ -304,12 +305,12 @@
                 "RenderFormat":
                 {
                     "DialogueReadType": "HasDelimiter",
-                    "Delimiter": [ [ "0x00" ] ],
+                    "Delimiter": [ "(STOP)" ],
                     "RenderType": "Dictionary",
                     "DictionaryInteractions": [ "ChrDictionary", "CHR" ],
                     "IsDictionary": false,
                     "CHRFile": ".\\tables\\CHR",
-                    "DictionaryTemplateFile": ".\\tables\\Dictionary",
+                    "DictionaryFile": ".\\tables\\Dictionary",
                     "MirrorBlankDictionaryEntries": false,
                     "SquishyTextFile": ".\\tables\\SquishyText",
                     "PixelsPerLine": 224,
@@ -1066,7 +1067,7 @@
                     "Range-81 (Added)",
                     "Range-82 (Added)",
                     "Range-83 (Added)",
-                    "Range-84"
+                    "Range-84 (Added)"
                 ]
             }
         ]

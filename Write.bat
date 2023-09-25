@@ -4,7 +4,7 @@ set newImage=roms\Metal Slader Glory (NEW).nes
 
 ::Folders
 set projectFolder=%cd%
-set SpiroFolder=%cd%\tools\spiro
+set spiroFolder=%cd%\tools\spiro
 set XkasFolder=%cd%\tools\xkas
 
 cd "%projectFolder%"
@@ -12,7 +12,7 @@ cd "%projectFolder%"
 copy "%baseImage%" "%newImage%"
 
 ::Write script
-"%SpiroFolder%\Spiro.exe" /PathToCyproFolder "%projectFolder%" /Write
+"%SpiroFolder%\Spiro.exe" /ProjectDirectory "%projectFolder%" /Write /Verbose
 
 ::Apply Patches
 "%XkasFolder%\xkas.exe" -o "%newImage%" "asm\Metal_Slader.asm"
