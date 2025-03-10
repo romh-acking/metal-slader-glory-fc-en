@@ -15,12 +15,11 @@ copy "%baseImage%" "%newImage%"
 "%SpiroFolder%\Spiro.exe" /ProjectDirectory "%projectFolder%" /Write /Verbose
 
 ::Apply Patches
-"%XkasFolder%\xkas.exe" -o "%newImage%" "asm\Metal_Slader.asm"
-"%XkasFolder%\xkas.exe" -o "%newImage%" "asm\Metal_Slader_Palettes.asm"
-"%XkasFolder%\xkas.exe" -o "%newImage%" "asm\Metal_Slader_Font.asm"
-::"%XkasFolder%\xkas.exe" -o "%newImage%" "asm\Seizure.asm"
-::"%XkasFolder%\xkas.exe" -o "%newImage%" "asm\SlowSpeed.asm"
-::"%XkasFolder%\xkas.exe" -o "%newImage%" "asm\Metal_Slader_Palettes-Password_Orange.asm"
+"%XkasFolder%\xkas.exe" -o "%newImage%" "asm\main.asm"
+"%XkasFolder%\xkas.exe" -o "%newImage%" "asm\palettes.asm"
+"%XkasFolder%\xkas.exe" -o "%newImage%" "asm\font.asm"
+::"%XkasFolder%\xkas.exe" -o "%newImage%" "asm\seizure.asm"
+::"%XkasFolder%\xkas.exe" -o "%newImage%" "asm\palettes - password orange.asm"
 
 "%newImage%"
 

@@ -36,7 +36,7 @@ He sells books detailing the games' development, including the 64DD prequel. You
 	* Use this to store your roms
 	* Apply the beat patch named Expand.bps
 		* Dumps online commonly have an incorrect header which indicate the game uses a battery backup when it does not. Change `0x6` from `$52` to `$50` to correct this. The header should be as follows before patching:
-		* `4E 45 53 1A 20 40 50 00 00 00 00 00 00 00 00 00`
+		* `4E 45 53 1A 20 40 50 08 00 00 00 00 00 00 00 01`
 * script
 	* Contains the dump script in Script.json. It contains the Japanese script and the English translation.
 	* You can also store xlsx backups of the script here.
@@ -146,6 +146,15 @@ Feel free to remove these control codes changes or adjust them to suit your need
 Removing the end quotes will messe with various character animations. Most apparent are the character's mouths never closing. Certain character animations won't play at times and in rare instances obvious onscreen graphical glitching will occur.
 
 ## Changelog
+* 2025 March 10th, 1.2
+	* Syncing with SNES translation release changes
+		* Script changes
+		* Properly implemented mouth pattern patch
+		* Mising person report text speed bug fix
+		* Cleaned up ellipses
+    * Updated codebase to version 3 of tools
+* 2021 October 3rd: 1.1
+    * The countdown timer in stage 7 was adjusted. The colon was turned into a period as it's more appropriate for the `seconds.milliseconds` format.
 * 2021 August 30th: 1.0
     * Initial release
 
@@ -189,6 +198,8 @@ Removing the end quotes will messe with various character animations. Most appar
     * Manual feedback
 * inactive#4484
     * Was there
+* mictlantecuhtle, bikerspade
+    * iNES 2.0 request
 
 ### Beta Testers
 * ccmar#6676

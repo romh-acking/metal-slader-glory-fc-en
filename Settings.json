@@ -1,1075 +1,978 @@
 {
-	"SpiroVersion": 2,
-    "Files":
-    {
-        "Original": ".\\roms\\Metal Slader Glory (Japan).nes",
-        "New": ".\\roms\\Metal Slader Glory (NEW).nes"
-    },
-    "Scripts":
-    {
-        "ScriptPath": ".\\script\\Script.json",
-        "Original": true,
-        "Comment": true,
-        "New": true,
-        "Bytes": false,
-        "Menu": true,
-        "Proof": false
-    },
-    "Misc":
-    {
-        "BlankOutTextDataAfterRead": false,
-        "BlankOutByte": "0x62",
-        "MultiplePointersReferencingAString": false,
-        "GetFileToWritePointerFromPointersField": false
-    },
-    "ScriptManager":
-    {
-        "WriteScript": "./Write.bat",
-        "DisplayReplaceCollection":
-        [
-            {
-                "Find": "\\[Heart\\]",
-                "Replace": "♥"
-            },
-            {
-                "Find": "\\[Note\\]",
-                "Replace": "♪"
-            },
-            {
-                "Find": "\\\\LineBreakSkip/",
-                "Replace": ""
-            },
-            {
-                "Find": "\\[.\\.\\.\\]",
-                "Replace": "…"
-            },
-            {
-                "Find": "\\[\\.\\.\\]",
-                "Replace": ".."
-            },
-            {
-                "Find": "\\[！？\\]",
-                "ReplaceOriginal": "！？"
-            },
-            {
-                "Find": "\\[Sweat\\]",
-                "Replace": "💦"
-            },
-            {
-                "Find": "゛(.)",
-                "Replace": "$1゛"
-            },
-            {
-                "Find": "゜(.)",
-                "Replace": "$1゜"
-            },
-            {
-                "Find": "\\[！！\\]",
-                "Replace": "！！"
-            },
-            {
-                "Find": "\\[Left Parenthesis\\]",
-                "Replace": "（"
-            },
-            {
-                "Find": "\\[Right Parenthesis\\]",
-                "Replace": "）"
-            },
-            {
-                "Find": "\\[.*?\\]",
-                "Replace": "#"
-            },
-            {
-                "Find": "\\(End quote\\)",
-                "ReplaceNew": "$",
-                "ReplaceOriginal": "」"
-            },
-            {
-                "Find": "\\(CODE 0E\\)",
-                "Replace": "―"
-            },
-            {
-                "Find": "\\(CODE 20 Tadashi:\\)",
-                "ReplaceNew": "\r\nTadashi:",
-                "ReplaceOriginal": "\r\n　忠　「"
-            },
-            {
-                "Find": "\\(CODE 21 Elina:\\)",
-                "ReplaceNew": "\r\nElina:",
-                "ReplaceOriginal": "\r\nエリナ　「"
-            },
-            {
-                "Find": "\\(CODE 22 Azusa:\\)",
-                "ReplaceNew": "\r\nAzusa:",
-                "ReplaceOriginal": "\r\nあずさ　「"
-            },
-            {
-                "Find": "\\(CODE 23 Charmy:\\)",
-                "ReplaceNew": "\r\nCharmy:",
-                "ReplaceOriginal": "\r\nチャ―ミ―　「"
-            },
-            {
-                "Find": "\\(CODE 24 Gen:\\)",
-                "ReplaceNew": "\r\nGen:",
-                "ReplaceOriginal": "\r\nゲ　ン　「"
-            },
-            {
-                "Find": "\\(CODE 25 Silkiene:\\)",
-                "ReplaceNew": "\r\nSilkiene:",
-                "ReplaceOriginal": "\r\nシルキ―ヌ　「"
-            },
-            {
-                "Find": "\\(CODE 26 Catty:\\)",
-                "ReplaceNew": "\r\nCatty:",
-                "ReplaceOriginal": "\r\nキャティ　「"
-            },
-            {
-                "Find": "\\(CODE 27 Enkai:\\)",
-                "ReplaceNew": "\r\nEnkai:",
-                "ReplaceOriginal": "\r\nエンカイ　「"
-            },
-            {
-                "Find": "\\(CODE 28 Yayoi:\\)",
-                "ReplaceNew": "\r\nYayoi:",
-                "ReplaceOriginal": "\r\nやよい　「"
-            },
-            {
-                "Find": "\\(CODE 29 Waitress:\\)",
-                "ReplaceNew": "\r\nWaitress:",
-                "ReplaceOriginal": "\r\nウェイトレス　「"
-            },
-            {
-                "Find": "\\(CODE 2A Jiff:\\)",
-                "ReplaceNew": "\r\nJiff:",
-                "ReplaceOriginal": "\r\nジ　フ　「"
-            },
-            {
-                "Find": "\\(CODE 2B Sayoko:\\)",
-                "ReplaceNew": "\r\nSayoko:",
-                "ReplaceOriginal": "\r\n小夜子　「"
-            },
-            {
-                "Find": "\\(CODE 2C Silkiene: no namecard\\)",
-                "ReplaceNew": "\r\n♥:",
-                "ReplaceOriginal": "\r\n　♥　「"
-            },
-            {
-                "Find": "\\(CODE 2D Petrouchka:\\)",
-                "ReplaceNew": "\r\n﹡:",
-                "ReplaceOriginal": "\r\n　﹡　「"
-            },
-            {
-                "Find": "\\(CODE 2E Luna:\\)",
-                "ReplaceNew": "\r\n♥:",
-                "ReplaceOriginal": "\r\n　♥　「"
-            },
-            {
-                "Find": "\\(CODE 2F Ai:\\)",
-                "ReplaceNew": "\r\n﹡:",
-                "ReplaceOriginal": "\r\n　﹡　「"
-            },
-            {
-                "Find": "\\(CODE 30 Shin:\\)",
-                "ReplaceNew": "\r\n﹡:",
-                "ReplaceOriginal": "\r\n　﹡　「"
-            },
-            {
-                "Find": "\\(CODE 32 Kaoru:\\)",
-                "ReplaceNew": "\r\n♥:",
-                "ReplaceOriginal": "\r\n　♥　「"
-            },
-            {
-                "Find": "\\(CODE 33 Mannequin:\\)",
-                "ReplaceNew": "\r\n﹡:",
-                "ReplaceOriginal": "\r\n　﹡　「"
-            },
-            {
-                "Find": "\\(CODE 34 Catty: no namecard\\)",
-                "ReplaceNew": "\r\n♥:",
-                "ReplaceOriginal": "\r\n　♥　「"
-            },
-            {
-                "Find": "\\(CODE 35 Enkai: no namecard\\)|\\(CODE 39 Blue Boy:\\)",
-                "ReplaceNew": "\r\n﹡:",
-                "ReplaceOriginal": "\r\n　﹡　「"
-            },
-            {
-                "Find": "\\(CODE 36 Crew Member:\\)",
-                "ReplaceNew": "\r\n﹡:",
-                "ReplaceOriginal": "\r\n　﹡　「"
-            },
-            {
-                "Find": "\\(CODE 37 Jiff: no namecard\\)",
-                "ReplaceNew": "\r\n﹡:",
-                "ReplaceOriginal": "\r\n　﹡　「"
-            },
-            {
-                "Find": "\\(CODE 38 Sayoko: no namecard\\)",
-                "ReplaceNew": "\r\n﹡:",
-                "ReplaceOriginal": "\r\n　﹡　「"
-            },
-            {
-                "Find": "\\(CODE 54 Tadashi: scared\\)",
-                "ReplaceNew": "\r\nTadashi:",
-                "ReplaceOriginal": "\r\n　忠　「"
-            },
-            {
-                "Find": "\\(CODE 55 Elina: scared\\)",
-                "ReplaceNew": "\r\nElina:",
-                "ReplaceOriginal": "\r\nエリナ　「"
-            },
-            {
-                "Find": "\\(CODE 56 Catty:\\)",
-                "ReplaceNew": "\r\nCatty:",
-                "ReplaceOriginal": "\r\nキャティ　「"
-            },
-            {
-                "Find": "\\(CODE 61 Azusa no namecard:\\)",
-                "ReplaceNew": "\r\n",
-                "ReplaceOriginal": "\r\n「"
-            },
-            {
-                "Find": "\\(CODE 57 Enkai:\\)",
-                "ReplaceNew": "\r\nEnkai:",
-                "ReplaceOriginal": "\r\nエンカイ　「"
-            },
-            {
-                "Find": "\\(CODE 5A Azusa:\\)",
-                "ReplaceNew": "\r\nAzusa:",
-                "ReplaceOriginal": "\r\nあずさ　「"
-            },
-            {
-                "Find": "\\(CODE 3A Airline PA:\\)",
-                "ReplaceNew": "\r\n♪:",
-                "ReplaceOriginal": "\r\n♪　「"
-            },
-            {
-                "Find": "\\(LINE\\)",
-                "Replace": "\r\n"
-            }
-        ]
-    },
-    "Pointers":
-    {
-        "Read&Write":
-        {
-            "Dictionary":
-            {
-                "File": "Original",
-                "PointerFormat":
-                [
-                    {
-                        "Address":
-                        [
-                            "0x3D5C"
-                        ],
-                        "PcDifference": "0x10",
-                        "AddressConversion": "None",
-                        "EntryNumber": "0xB54",
-                        "PointerType": "ThreeByteMetalSladerNESPrimary",
-                        "PointerLength": 3,
-                        "StoreOutOfOrderToSaveSpace": true
-                    }
-                ],
-                "RenderFormat":
-                {
-                    "DialogueReadType": "HasLengthVar",
-                    "Delimiter": [],
-                    "RenderType": "NoDictionaryMetalSladerNameCard",
-                    "DictionaryInteractions": [ "CHR" ],
-                    "IsDictionary": true,
-                    "CHRFile": ".\\tables\\CHR",
-                    "DictionaryFile": ".\\tables\\Dictionary",
-                    "MirrorBlankDictionaryEntries": false,
-                    "SquishyTextFile": ".\\tables\\SquishyText",
-                    "PixelsPerLine": 0,
-                    "InsertLineBreaks": false,
-                    "AutoLineBreak": "MetalSladerGlory"
-                }
-            },
-            "Dialogue":
-            {
-                "File": "Original",
-                "PointerFormat":
-                [
-                    {
-                        "Address": [ "0x1CC5" ],
-                        "PcDifference": "0x10",
-                        "AddressConversion": "None",
-                        "EntryNumber": "0xADD",
-                        "PointerType": "ThreeByteMetalSladerNESTransPrimaryNoLength",
-                        "PointerLength": 3,
-                        "StoreOutOfOrderToSaveSpace": true
-                    }
-                ],
-                "RenderFormat":
-                {
-                    "DialogueReadType": "HasDelimiter",
-                    "Delimiter": [ "(STOP)" ],
-                    "RenderType": "Dictionary",
-                    "DictionaryInteractions": [ "ChrDictionary", "CHR" ],
-                    "IsDictionary": false,
-                    "CHRFile": ".\\tables\\CHR",
-                    "DictionaryFile": ".\\tables\\Dictionary",
-                    "MirrorBlankDictionaryEntries": false,
-                    "SquishyTextFile": ".\\tables\\SquishyText",
-                    "PixelsPerLine": 224,
-                    "InsertLineBreaks": true,
-                    "AutoLineBreak": "MetalSladerGlory"
-                }
-            }
-        }
-    },
-    "Write":
-    {
-        "WriteableRange":
-        {
-            "Range-00":
-            {
-                "File": "New",
-                "StartAddress": "0x05F58",
-                "Size": "0xB7"
-            },
-            "Range-01":
-            {
-                "File": "New",
-                "StartAddress": "0x5485C",
-                "Size": "0x7B3"
-            },
-            "Range-02":
-            {
-                "File": "New",
-                "StartAddress": "0x55010",
-                "Size": "0x1000"
-            },
-            "Range-03":
-            {
-                "File": "New",
-                "StartAddress": "0x56010",
-                "Size": "0x1000"
-            },
-            "Range-04":
-            {
-                "File": "New",
-                "StartAddress": "0x57010",
-                "Size": "0x1000"
-            },
-            "Range-05":
-            {
-                "File": "New",
-                "StartAddress": "0x58010",
-                "Size": "0x1000"
-            },
-            "Range-06":
-            {
-                "File": "New",
-                "StartAddress": "0x59010",
-                "Size": "0x1000"
-            },
-            "Range-07":
-            {
-                "File": "New",
-                "StartAddress": "0x5A010",
-                "Size": "0x1000"
-            },
-            "Range-08":
-            {
-                "File": "New",
-                "StartAddress": "0x5B010",
-                "Size": "0x1000"
-            },
-            "Range-09":
-            {
-                "File": "New",
-                "StartAddress": "0x5C010",
-                "Size": "0x1000"
-            },
-            "Range-10":
-            {
-                "File": "New",
-                "StartAddress": "0x5D010",
-                "Size": "0x1000"
-            },
-            "Range-11":
-            {
-                "File": "New",
-                "StartAddress": "0x5E010",
-                "Size": "0x1000"
-            },
-            "Range-12":
-            {
-                "File": "New",
-                "StartAddress": "0x5F010",
-                "Size": "0x1000"
-            },
-            "Range-13":
-            {
-                "File": "New",
-                "StartAddress": "0x60010",
-                "Size": "0x1000"
-            },
-            "Range-14":
-            {
-                "File": "New",
-                "StartAddress": "0x61010",
-                "Size": "0x1000"
-            },
-            "Range-15":
-            {
-                "File": "New",
-                "StartAddress": "0x62010",
-                "Size": "0x1000"
-            },
-            "Range-16":
-            {
-                "File": "New",
-                "StartAddress": "0x63010",
-                "Size": "0x1000"
-            },
-            "Range-17":
-            {
-                "File": "New",
-                "StartAddress": "0x64010",
-                "Size": "0x1000"
-            },
-            "Range-18":
-            {
-                "File": "New",
-                "StartAddress": "0x65010",
-                "Size": "0x1000"
-            },
-            "Range-19":
-            {
-                "File": "New",
-                "StartAddress": "0x66010",
-                "Size": "0x1000"
-            },
-            "Range-20":
-            {
-                "File": "New",
-                "StartAddress": "0x67010",
-                "Size": "0x1000"
-            },
-            "Range-21":
-            {
-                "File": "New",
-                "StartAddress": "0x68010",
-                "Size": "0x1000"
-            },
-            "Range-22":
-            {
-                "File": "New",
-                "StartAddress": "0x69010",
-                "Size": "0x1000"
-            },
-            "Range-23":
-            {
-                "File": "New",
-                "StartAddress": "0x6A010",
-                "Size": "0x1000"
-            },
-            "Range-24":
-            {
-                "File": "New",
-                "StartAddress": "0x6B010",
-                "Size": "0x1000"
-            },
-            "Range-25":
-            {
-                "File": "New",
-                "StartAddress": "0x6C010",
-                "Size": "0x1000"
-            },
-            "Range-26":
-            {
-                "File": "New",
-                "StartAddress": "0x6D010",
-                "Size": "0x1000"
-            },
-            "Range-27":
-            {
-                "File": "New",
-                "StartAddress": "0x6E010",
-                "Size": "0x1000"
-            },
-            "Range-28":
-            {
-                "File": "New",
-                "StartAddress": "0x6F010",
-                "Size": "0x1000"
-            },
-            "Range-29":
-            {
-                "File": "New",
-                "StartAddress": "0x70010",
-                "Size": "0x1000"
-            },
-            "Range-30":
-            {
-                "File": "New",
-                "StartAddress": "0x71010",
-                "Size": "0x1000"
-            },
-            "Range-31":
-            {
-                "File": "New",
-                "StartAddress": "0x72010",
-                "Size": "0x1000"
-            },
-            "Range-32":
-            {
-                "File": "New",
-                "StartAddress": "0x73010",
-                "Size": "0x1000"
-            },
-            "Range-33 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x84010",
-                "Size": "0x1000"
-            },
-            "Range-34 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x85010",
-                "Size": "0x1000"
-            },
-            "Range-35 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x86010",
-                "Size": "0x1000"
-            },
-            "Range-36 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x87010",
-                "Size": "0x1000"
-            },
-            "Range-37 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x88010",
-                "Size": "0x1000"
-            },
-            "Range-38 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x89010",
-                "Size": "0x1000"
-            },
-            "Range-39 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x8A010",
-                "Size": "0x1000"
-            },
-            "Range-40 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x8B010",
-                "Size": "0x1000"
-            },
-            "Range-41 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x8C010",
-                "Size": "0x1000"
-            },
-            "Range-42 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x8D010",
-                "Size": "0x1000"
-            },
-            "Range-43 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x8E010",
-                "Size": "0x1000"
-            },
-            "Range-44 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x8F010",
-                "Size": "0x1000"
-            },
-            "Range-45 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x90010",
-                "Size": "0x1000"
-            },
-            "Range-46 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x91010",
-                "Size": "0x1000"
-            },
-            "Range-47 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x92010",
-                "Size": "0x1000"
-            },
-            "Range-48 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x93010",
-                "Size": "0x1000"
-            },
-            "Range-49 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x94010",
-                "Size": "0x1000"
-            },
-            "Range-50 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x95010",
-                "Size": "0x1000"
-            },
-            "Range-51 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x96010",
-                "Size": "0x1000"
-            },
-            "Range-52 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x97010",
-                "Size": "0x1000"
-            },
-            "Range-53 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x98010",
-                "Size": "0x1000"
-            },
-            "Range-54 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x99010",
-                "Size": "0x1000"
-            },
-            "Range-55 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x9A010",
-                "Size": "0x1000"
-            },
-            "Range-56 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x9B010",
-                "Size": "0x1000"
-            },
-            "Range-57 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x9C010",
-                "Size": "0x1000"
-            },
-            "Range-58 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x9D010",
-                "Size": "0x1000"
-            },
-            "Range-59 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x9E010",
-                "Size": "0x1000"
-            },
-            "Range-60 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0x9F010",
-                "Size": "0x1000"
-            },
-            "Range-61 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xA0010",
-                "Size": "0x1000"
-            },
-            "Range-62 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xA1010",
-                "Size": "0x1000"
-            },
-            "Range-63 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xA2010",
-                "Size": "0x1000"
-            },
-            "Range-64 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xA3010",
-                "Size": "0x1000"
-            },
-            "Range-65 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xA4010",
-                "Size": "0x1000"
-            },
-            "Range-66 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xA5010",
-                "Size": "0x1000"
-            },
-            "Range-67 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xA6010",
-                "Size": "0x1000"
-            },
-            "Range-68 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xA7010",
-                "Size": "0x1000"
-            },
-            "Range-69 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xA8010",
-                "Size": "0x1000"
-            },
-            "Range-70 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xA9010",
-                "Size": "0x1000"
-            },
-            "Range-71 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xAA010",
-                "Size": "0x1000"
-            },
-            "Range-72 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xAB010",
-                "Size": "0x1000"
-            },
-            "Range-73 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xAC010",
-                "Size": "0x1000"
-            },
-            "Range-74 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xAD010",
-                "Size": "0x1000"
-            },
-            "Range-75 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xAE010",
-                "Size": "0x1000"
-            },
-            "Range-76 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xAF010",
-                "Size": "0x1000"
-            },
-            "Range-77 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xB0010",
-                "Size": "0x1000"
-            },
-            "Range-78 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xB1010",
-                "Size": "0x1000"
-            },
-            "Range-79 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xB2010",
-                "Size": "0x1000"
-            },
-            "Range-80 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xB3010",
-                "Size": "0x1000"
-            },
-            "Range-81 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xB4010",
-                "Size": "0x1000"
-            },
-            "Range-82 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xB5010",
-                "Size": "0x1000"
-            },
-            "Range-83 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xB6010",
-                "Size": "0x1000"
-            },
-            "Range-84 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xB7010",
-                "Size": "0x1000"
-            },
-            "Range-85 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xB8010",
-                "Size": "0x1000"
-            },
-            "Range-86 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xB9010",
-                "Size": "0x1000"
-            },
-            "Range-87 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xBA010",
-                "Size": "0x1000"
-            },
-            "Range-88 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xBB010",
-                "Size": "0x1000"
-            },
-            "Range-89 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xBC010",
-                "Size": "0x1000"
-            },
-            "Range-90 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xBD010",
-                "Size": "0x1000"
-            },
-            "Range-91 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xBE010",
-                "Size": "0x1000"
-            },
-            "Range-92 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xBF010",
-                "Size": "0x1000"
-            },
-            "Range-93 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xC0010",
-                "Size": "0x1000"
-            },
-            "Range-94 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xC1010",
-                "Size": "0x1000"
-            },
-            "Range-95 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xC2010",
-                "Size": "0x1000"
-            },
-            "Range-96 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xC3010",
-                "Size": "0x1000"
-            },
-            "Range-97 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xC4010",
-                "Size": "0x1000"
-            },
-            "Range-98 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xC5010",
-                "Size": "0x1000"
-            },
-            "Range-99 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xC6010",
-                "Size": "0x1000"
-            },
-            "Range-100 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xC7010",
-                "Size": "0x1000"
-            },
-            "Range-101 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xC8010",
-                "Size": "0x1000"
-            },
-            "Range-102 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xC9010",
-                "Size": "0x1000"
-            },
-            "Range-103 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xCA010",
-                "Size": "0x1000"
-            },
-            "Range-104 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xCB010",
-                "Size": "0x1000"
-            },
-            "Range-105 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xCC010",
-                "Size": "0x1000"
-            },
-            "Range-106 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xCD010",
-                "Size": "0x1000"
-            },
-            "Range-107 (Added)":
-            {
-                "File": "New",
-                "StartAddress": "0xCE010",
-                "Size": "0x1000"
-            }
+  "spiroVersion": 3,
+  "files": {
+    "Original": ".\\roms\\Metal Slader Glory (Japan).nes",
+    "New": ".\\roms\\Metal Slader Glory (NEW).nes"
+  },
+  "scripts": {
+    "scriptPath": ".\\script\\Script.json",
+    "original": true,
+    "comment": true,
+    "new": true,
+    "bytes": false,
+    "menu": true,
+    "proof": false
+  },
+  "misc": {
+    "blankOutTextDataAfterRead": false,
+    "blankOutByte": "0x62",
+    "getFileToWritePointerFromPointersField": false,
+	"includedPointerMetadata": true
+  },
+  "scriptManager": {
+    "writeScript": "./Write.bat",
+    "displayReplace": [
+      {
+        "find": "\\[Heart\\]",
+        "replace": "♥"
+      },
+      {
+        "find": "\\[Note\\]",
+        "replace": "♪"
+      },
+      {
+        "find": "\\\\LineBreakSkip/",
+        "replace": ""
+      },
+      {
+        "find": "\\[.\\.\\.\\]",
+        "replace": "…"
+      },
+      {
+        "find": "\\[\\.\\.\\]",
+        "replace": ".."
+      },
+      {
+        "find": "\\[！？\\]",
+        "replaceOriginal": "！？"
+      },
+      {
+        "find": "\\[Sweat\\]",
+        "replace": "💦"
+      },
+      {
+        "find": "゛(.)",
+        "replace": "$1゛"
+      },
+      {
+        "find": "゜(.)",
+        "replace": "$1゜"
+      },
+      {
+        "find": "\\[！！\\]",
+        "replace": "！！"
+      },
+      {
+        "find": "\\[Left Parenthesis\\]",
+        "replace": "（"
+      },
+      {
+        "find": "\\[Right Parenthesis\\]",
+        "replace": "）"
+      },
+      {
+        "find": "\\[.*?\\]",
+        "replace": "#"
+      },
+      {
+        "find": "\\(End quote\\)",
+        "replaceNew": "$",
+        "replaceOriginal": "」"
+      },
+      {
+        "find": "\\(CODE 0E\\)",
+        "replace": "―"
+      },
+      {
+        "find": "\\(CODE 20 Tadashi:\\)",
+        "replaceNew": "\r\nTadashi:",
+        "replaceOriginal": "\r\n　忠　「"
+      },
+      {
+        "find": "\\(CODE 21 Elina:\\)",
+        "replaceNew": "\r\nElina:",
+        "replaceOriginal": "\r\nエリナ　「"
+      },
+      {
+        "find": "\\(CODE 22 Azusa:\\)",
+        "replaceNew": "\r\nAzusa:",
+        "replaceOriginal": "\r\nあずさ　「"
+      },
+      {
+        "find": "\\(CODE 23 Charmy:\\)",
+        "replaceNew": "\r\nCharmy:",
+        "replaceOriginal": "\r\nチャ―ミ―　「"
+      },
+      {
+        "find": "\\(CODE 24 Gen:\\)",
+        "replaceNew": "\r\nGen:",
+        "replaceOriginal": "\r\nゲ　ン　「"
+      },
+      {
+        "find": "\\(CODE 25 Silkiene:\\)",
+        "replaceNew": "\r\nSilkiene:",
+        "replaceOriginal": "\r\nシルキ―ヌ　「"
+      },
+      {
+        "find": "\\(CODE 26 Catty:\\)",
+        "replaceNew": "\r\nCatty:",
+        "replaceOriginal": "\r\nキャティ　「"
+      },
+      {
+        "find": "\\(CODE 27 Enkai:\\)",
+        "replaceNew": "\r\nEnkai:",
+        "replaceOriginal": "\r\nエンカイ　「"
+      },
+      {
+        "find": "\\(CODE 28 Yayoi:\\)",
+        "replaceNew": "\r\nYayoi:",
+        "replaceOriginal": "\r\nやよい　「"
+      },
+      {
+        "find": "\\(CODE 29 Waitress:\\)",
+        "replaceNew": "\r\nWaitress:",
+        "replaceOriginal": "\r\nウェイトレス　「"
+      },
+      {
+        "find": "\\(CODE 2A Jiff:\\)",
+        "replaceNew": "\r\nJiff:",
+        "replaceOriginal": "\r\nジ　フ　「"
+      },
+      {
+        "find": "\\(CODE 2B Sayoko:\\)",
+        "replaceNew": "\r\nSayoko:",
+        "replaceOriginal": "\r\n小夜子　「"
+      },
+      {
+        "find": "\\(CODE 2C Silkiene: no namecard\\)",
+        "replaceNew": "\r\n♥:",
+        "replaceOriginal": "\r\n　♥　「"
+      },
+      {
+        "find": "\\(CODE 2D Petrouchka:\\)",
+        "replaceNew": "\r\n﹡:",
+        "replaceOriginal": "\r\n　﹡　「"
+      },
+      {
+        "find": "\\(CODE 2E Luna:\\)",
+        "replaceNew": "\r\n♥:",
+        "replaceOriginal": "\r\n　♥　「"
+      },
+      {
+        "find": "\\(CODE 2F Ai:\\)",
+        "replaceNew": "\r\n﹡:",
+        "replaceOriginal": "\r\n　﹡　「"
+      },
+      {
+        "find": "\\(CODE 30 Shin:\\)",
+        "replaceNew": "\r\n﹡:",
+        "replaceOriginal": "\r\n　﹡　「"
+      },
+      {
+        "find": "\\(CODE 32 Kaoru:\\)",
+        "replaceNew": "\r\n♥:",
+        "replaceOriginal": "\r\n　♥　「"
+      },
+      {
+        "find": "\\(CODE 33 Mannequin:\\)",
+        "replaceNew": "\r\n﹡:",
+        "replaceOriginal": "\r\n　﹡　「"
+      },
+      {
+        "find": "\\(CODE 34 Catty: no namecard\\)",
+        "replaceNew": "\r\n♥:",
+        "replaceOriginal": "\r\n　♥　「"
+      },
+      {
+        "find": "\\(CODE 35 Enkai: no namecard\\)|\\(CODE 39 Blue Boy:\\)",
+        "replaceNew": "\r\n﹡:",
+        "replaceOriginal": "\r\n　﹡　「"
+      },
+      {
+        "find": "\\(CODE 36 Crew Member:\\)",
+        "replaceNew": "\r\n﹡:",
+        "replaceOriginal": "\r\n　﹡　「"
+      },
+      {
+        "find": "\\(CODE 37 Jiff: no namecard\\)",
+        "replaceNew": "\r\n﹡:",
+        "replaceOriginal": "\r\n　﹡　「"
+      },
+      {
+        "find": "\\(CODE 38 Sayoko: no namecard\\)",
+        "replaceNew": "\r\n﹡:",
+        "replaceOriginal": "\r\n　﹡　「"
+      },
+      {
+        "find": "\\(CODE 54 Tadashi: scared\\)",
+        "replaceNew": "\r\nTadashi:",
+        "replaceOriginal": "\r\n　忠　「"
+      },
+      {
+        "find": "\\(CODE 55 Elina: scared\\)",
+        "replaceNew": "\r\nElina:",
+        "replaceOriginal": "\r\nエリナ　「"
+      },
+      {
+        "find": "\\(CODE 56 Catty:\\)",
+        "replaceNew": "\r\nCatty:",
+        "replaceOriginal": "\r\nキャティ　「"
+      },
+      {
+        "find": "\\(CODE 61 Azusa no namecard:\\)",
+        "replaceNew": "\r\n",
+        "replaceOriginal": "\r\n「"
+      },
+      {
+        "find": "\\(CODE 57 Enkai:\\)",
+        "replaceNew": "\r\nEnkai:",
+        "replaceOriginal": "\r\nエンカイ　「"
+      },
+      {
+        "find": "\\(CODE 5A Azusa:\\)",
+        "replaceNew": "\r\nAzusa:",
+        "replaceOriginal": "\r\nあずさ　「"
+      },
+      {
+        "find": "\\(CODE 3A Airline PA:\\)",
+        "replaceNew": "\r\n♪:",
+        "replaceOriginal": "\r\n♪　「"
+      },
+      {
+        "find": "\\(LINE\\)",
+        "replace": "\r\n"
+      },
+	  {
+        "find": "\\(.*?\\)",
+        "replace": ""
+      },
+	  {
+        "find": "\\[(.*?)\\]",
+        "replace": "$1"
+      },
+	  {
+        "find": "<.*?>",
+        "replace": ""
+      }
+    ]
+  },
+  "pointers": {
+    "read&Write": {
+      "Dictionary": {
+        "file": "Original",
+        "pointerFormat": {
+          "addresses": [
+            "0x3D5C"
+          ],
+          "pcDifference": "0x10",
+          "addressConversion": "None",
+          "entryNumber": "0xB54",
+          "pointerType": "threeByteMetalSladerNESPrimary",
+          "pointerLength": 3,
+          "placementStrategy": "bestfit",
+          "subentryKeyPrefix": "dictionary"
         },
-        "WriteRegion":
-        [
-            {
-                "EntryOwners":
-                [
-                    "Dictionary",
-                    "Dialogue"
-                ],
-                "WriteableAddressRanges":
-                [
-                    "Range-00",
-                    "Range-01",
-                    "Range-02",
-                    "Range-03",
-                    "Range-04",
-                    "Range-05",
-                    "Range-06",
-                    "Range-07",
-                    "Range-08",
-                    "Range-09",
-                    "Range-10",
-                    "Range-11",
-                    "Range-12",
-                    "Range-13",
-                    "Range-14",
-                    "Range-15",
-                    "Range-16",
-                    "Range-17",
-                    "Range-18",
-                    "Range-19",
-                    "Range-20",
-                    "Range-21",
-                    "Range-22",
-                    "Range-23",
-                    "Range-24",
-                    "Range-25",
-                    "Range-26",
-                    "Range-27",
-                    "Range-28",
-                    "Range-29",
-                    "Range-30",
-                    "Range-31",
-                    "Range-32",
-                    "Range-33 (Added)",
-                    "Range-34 (Added)",
-                    "Range-35 (Added)",
-                    "Range-36 (Added)",
-                    "Range-37 (Added)",
-                    "Range-38 (Added)",
-                    "Range-39 (Added)",
-                    "Range-40 (Added)",
-                    "Range-41 (Added)",
-                    "Range-42 (Added)",
-                    "Range-43 (Added)",
-                    "Range-44 (Added)",
-                    "Range-45 (Added)",
-                    "Range-46 (Added)",
-                    "Range-47 (Added)",
-                    "Range-48 (Added)",
-                    "Range-49 (Added)",
-                    "Range-50 (Added)",
-                    "Range-51 (Added)",
-                    "Range-52 (Added)",
-                    "Range-53 (Added)",
-                    "Range-54 (Added)",
-                    "Range-55 (Added)",
-                    "Range-56 (Added)",
-                    "Range-57 (Added)",
-                    "Range-58 (Added)",
-                    "Range-59 (Added)",
-                    "Range-60 (Added)",
-                    "Range-61 (Added)",
-                    "Range-62 (Added)",
-                    "Range-63 (Added)",
-                    "Range-64 (Added)",
-                    "Range-65 (Added)",
-                    "Range-66 (Added)",
-                    "Range-67 (Added)",
-                    "Range-68 (Added)",
-                    "Range-69 (Added)",
-                    "Range-70 (Added)",
-                    "Range-71 (Added)",
-                    "Range-72 (Added)",
-                    "Range-73 (Added)",
-                    "Range-74 (Added)",
-                    "Range-75 (Added)",
-                    "Range-76 (Added)",
-                    "Range-77 (Added)",
-                    "Range-78 (Added)",
-                    "Range-79 (Added)",
-                    "Range-80 (Added)",
-                    "Range-81 (Added)",
-                    "Range-82 (Added)",
-                    "Range-83 (Added)",
-                    "Range-84 (Added)"
-                ]
+        "renderFormat": {
+          "dialogueReadType": "HasLengthVar",
+          "delimiters": [],
+          "renderType": "NoDictionaryMetalSladerNameCard",
+          "dictionaryInteractions": [
+            "CHR"
+          ],
+          "isDictionary": true,
+          "tables": {
+            "main": {
+                "isMain": true,
+                "chrFile": ".\\tables\\CHR",
+                "dictionaryFile": ".\\tables\\Dictionary",
+                "mirrorBlankDictionaryEntries": false,
             }
-        ]
+          },
+          "findAndReplaceFile": ".\\tables\\SquishyText",
+          "findAndReplaceStrategy": "squishyText",
+          "pixelsPerLine": 0,
+          "autoLineBreak": "none",
+		  "includeRedirects": false
+        }
+      },
+      "Dialogue": {
+        "file": "Original",
+        "pointerFormat": {
+          "addresses": [
+            "0x1CC5"
+          ],
+          "pcDifference": "0x10",
+          "addressConversion": "None",
+          "entryNumber": "0xADD",
+          "pointerType": "ThreeByteMetalSladerNESTransPrimaryNoLength",
+          "pointerLength": 3,
+          "placementStrategy": "bestfit",
+          "subentryKeyPrefix": "dialogue"
+        },
+        "renderFormat": {
+          "dialogueReadType": "HasDelimiter",
+          "delimiters": [
+            "(STOP)"
+          ],
+          "renderType": "Dictionary",
+          "dictionaryInteractions": [
+            "ChrDictionary"
+          ],
+          "isDictionary": false,
+          "tables": {
+            "main": {
+                "isMain": true,
+                "chrFile": ".\\tables\\CHR",
+                "dictionaryFile": ".\\tables\\Dictionary",
+                "mirrorBlankDictionaryEntries": false,
+            }
+          },
+          "findAndReplaceFile": ".\\tables\\SquishyText",
+          "findAndReplaceStrategy": "squishyText",
+          "pixelsPerLine": 224,
+          "autoLineBreak": "MetalSladerGlory",
+		  "includeRedirects": true
+        }
+      }
     }
+  },
+  "write": {
+    "writeableRange": {
+      "Range-00": {
+        "file": "New",
+        "startAddress": "0x05F58",
+        "size": "0xB7"
+      },
+      "Range-01": {
+        "file": "New",
+        "startAddress": "0x5485C",
+        "size": "0x7B3"
+      },
+      "Range-02": {
+        "file": "New",
+        "startAddress": "0x55010",
+        "size": "0x1000"
+      },
+      "Range-03": {
+        "file": "New",
+        "startAddress": "0x56010",
+        "size": "0x1000"
+      },
+      "Range-04": {
+        "file": "New",
+        "startAddress": "0x57010",
+        "size": "0x1000"
+      },
+      "Range-05": {
+        "file": "New",
+        "startAddress": "0x58010",
+        "size": "0x1000"
+      },
+      "Range-06": {
+        "file": "New",
+        "startAddress": "0x59010",
+        "size": "0x1000"
+      },
+      "Range-07": {
+        "file": "New",
+        "startAddress": "0x5A010",
+        "size": "0x1000"
+      },
+      "Range-08": {
+        "file": "New",
+        "startAddress": "0x5B010",
+        "size": "0x1000"
+      },
+      "Range-09": {
+        "file": "New",
+        "startAddress": "0x5C010",
+        "size": "0x1000"
+      },
+      "Range-10": {
+        "file": "New",
+        "startAddress": "0x5D010",
+        "size": "0x1000"
+      },
+      "Range-11": {
+        "file": "New",
+        "startAddress": "0x5E010",
+        "size": "0x1000"
+      },
+      "Range-12": {
+        "file": "New",
+        "startAddress": "0x5F010",
+        "size": "0x1000"
+      },
+      "Range-13": {
+        "file": "New",
+        "startAddress": "0x60010",
+        "size": "0x1000"
+      },
+      "Range-14": {
+        "file": "New",
+        "startAddress": "0x61010",
+        "size": "0x1000"
+      },
+      "Range-15": {
+        "file": "New",
+        "startAddress": "0x62010",
+        "size": "0x1000"
+      },
+      "Range-16": {
+        "file": "New",
+        "startAddress": "0x63010",
+        "size": "0x1000"
+      },
+      "Range-17": {
+        "file": "New",
+        "startAddress": "0x64010",
+        "size": "0x1000"
+      },
+      "Range-18": {
+        "file": "New",
+        "startAddress": "0x65010",
+        "size": "0x1000"
+      },
+      "Range-19": {
+        "file": "New",
+        "startAddress": "0x66010",
+        "size": "0x1000"
+      },
+      "Range-20": {
+        "file": "New",
+        "startAddress": "0x67010",
+        "size": "0x1000"
+      },
+      "Range-21": {
+        "file": "New",
+        "startAddress": "0x68010",
+        "size": "0x1000"
+      },
+      "Range-22": {
+        "file": "New",
+        "startAddress": "0x69010",
+        "size": "0x1000"
+      },
+      "Range-23": {
+        "file": "New",
+        "startAddress": "0x6A010",
+        "size": "0x1000"
+      },
+      "Range-24": {
+        "file": "New",
+        "startAddress": "0x6B010",
+        "size": "0x1000"
+      },
+      "Range-25": {
+        "file": "New",
+        "startAddress": "0x6C010",
+        "size": "0x1000"
+      },
+      "Range-26": {
+        "file": "New",
+        "startAddress": "0x6D010",
+        "size": "0x1000"
+      },
+      "Range-27": {
+        "file": "New",
+        "startAddress": "0x6E010",
+        "size": "0x1000"
+      },
+      "Range-28": {
+        "file": "New",
+        "startAddress": "0x6F010",
+        "size": "0x1000"
+      },
+      "Range-29": {
+        "file": "New",
+        "startAddress": "0x70010",
+        "size": "0x1000"
+      },
+      "Range-30": {
+        "file": "New",
+        "startAddress": "0x71010",
+        "size": "0x1000"
+      },
+      "Range-31": {
+        "file": "New",
+        "startAddress": "0x72010",
+        "size": "0x1000"
+      },
+      "Range-32": {
+        "file": "New",
+        "startAddress": "0x73010",
+        "size": "0x1000"
+      },
+      "Range-33 (Added)": {
+        "file": "New",
+        "startAddress": "0x84010",
+        "size": "0x1000"
+      },
+      "Range-34 (Added)": {
+        "file": "New",
+        "startAddress": "0x85010",
+        "size": "0x1000"
+      },
+      "Range-35 (Added)": {
+        "file": "New",
+        "startAddress": "0x86010",
+        "size": "0x1000"
+      },
+      "Range-36 (Added)": {
+        "file": "New",
+        "startAddress": "0x87010",
+        "size": "0x1000"
+      },
+      "Range-37 (Added)": {
+        "file": "New",
+        "startAddress": "0x88010",
+        "size": "0x1000"
+      },
+      "Range-38 (Added)": {
+        "file": "New",
+        "startAddress": "0x89010",
+        "size": "0x1000"
+      },
+      "Range-39 (Added)": {
+        "file": "New",
+        "startAddress": "0x8A010",
+        "size": "0x1000"
+      },
+      "Range-40 (Added)": {
+        "file": "New",
+        "startAddress": "0x8B010",
+        "size": "0x1000"
+      },
+      "Range-41 (Added)": {
+        "file": "New",
+        "startAddress": "0x8C010",
+        "size": "0x1000"
+      },
+      "Range-42 (Added)": {
+        "file": "New",
+        "startAddress": "0x8D010",
+        "size": "0x1000"
+      },
+      "Range-43 (Added)": {
+        "file": "New",
+        "startAddress": "0x8E010",
+        "size": "0x1000"
+      },
+      "Range-44 (Added)": {
+        "file": "New",
+        "startAddress": "0x8F010",
+        "size": "0x1000"
+      },
+      "Range-45 (Added)": {
+        "file": "New",
+        "startAddress": "0x90010",
+        "size": "0x1000"
+      },
+      "Range-46 (Added)": {
+        "file": "New",
+        "startAddress": "0x91010",
+        "size": "0x1000"
+      },
+      "Range-47 (Added)": {
+        "file": "New",
+        "startAddress": "0x92010",
+        "size": "0x1000"
+      },
+      "Range-48 (Added)": {
+        "file": "New",
+        "startAddress": "0x93010",
+        "size": "0x1000"
+      },
+      "Range-49 (Added)": {
+        "file": "New",
+        "startAddress": "0x94010",
+        "size": "0x1000"
+      },
+      "Range-50 (Added)": {
+        "file": "New",
+        "startAddress": "0x95010",
+        "size": "0x1000"
+      },
+      "Range-51 (Added)": {
+        "file": "New",
+        "startAddress": "0x96010",
+        "size": "0x1000"
+      },
+      "Range-52 (Added)": {
+        "file": "New",
+        "startAddress": "0x97010",
+        "size": "0x1000"
+      },
+      "Range-53 (Added)": {
+        "file": "New",
+        "startAddress": "0x98010",
+        "size": "0x1000"
+      },
+      "Range-54 (Added)": {
+        "file": "New",
+        "startAddress": "0x99010",
+        "size": "0x1000"
+      },
+      "Range-55 (Added)": {
+        "file": "New",
+        "startAddress": "0x9A010",
+        "size": "0x1000"
+      },
+      "Range-56 (Added)": {
+        "file": "New",
+        "startAddress": "0x9B010",
+        "size": "0x1000"
+      },
+      "Range-57 (Added)": {
+        "file": "New",
+        "startAddress": "0x9C010",
+        "size": "0x1000"
+      },
+      "Range-58 (Added)": {
+        "file": "New",
+        "startAddress": "0x9D010",
+        "size": "0x1000"
+      },
+      "Range-59 (Added)": {
+        "file": "New",
+        "startAddress": "0x9E010",
+        "size": "0x1000"
+      },
+      "Range-60 (Added)": {
+        "file": "New",
+        "startAddress": "0x9F010",
+        "size": "0x1000"
+      },
+      "Range-61 (Added)": {
+        "file": "New",
+        "startAddress": "0xA0010",
+        "size": "0x1000"
+      },
+      "Range-62 (Added)": {
+        "file": "New",
+        "startAddress": "0xA1010",
+        "size": "0x1000"
+      },
+      "Range-63 (Added)": {
+        "file": "New",
+        "startAddress": "0xA2010",
+        "size": "0x1000"
+      },
+      "Range-64 (Added)": {
+        "file": "New",
+        "startAddress": "0xA3010",
+        "size": "0x1000"
+      },
+      "Range-65 (Added)": {
+        "file": "New",
+        "startAddress": "0xA4010",
+        "size": "0x1000"
+      },
+      "Range-66 (Added)": {
+        "file": "New",
+        "startAddress": "0xA5010",
+        "size": "0x1000"
+      },
+      "Range-67 (Added)": {
+        "file": "New",
+        "startAddress": "0xA6010",
+        "size": "0x1000"
+      },
+      "Range-68 (Added)": {
+        "file": "New",
+        "startAddress": "0xA7010",
+        "size": "0x1000"
+      },
+      "Range-69 (Added)": {
+        "file": "New",
+        "startAddress": "0xA8010",
+        "size": "0x1000"
+      },
+      "Range-70 (Added)": {
+        "file": "New",
+        "startAddress": "0xA9010",
+        "size": "0x1000"
+      },
+      "Range-71 (Added)": {
+        "file": "New",
+        "startAddress": "0xAA010",
+        "size": "0x1000"
+      },
+      "Range-72 (Added)": {
+        "file": "New",
+        "startAddress": "0xAB010",
+        "size": "0x1000"
+      },
+      "Range-73 (Added)": {
+        "file": "New",
+        "startAddress": "0xAC010",
+        "size": "0x1000"
+      },
+      "Range-74 (Added)": {
+        "file": "New",
+        "startAddress": "0xAD010",
+        "size": "0x1000"
+      },
+      "Range-75 (Added)": {
+        "file": "New",
+        "startAddress": "0xAE010",
+        "size": "0x1000"
+      },
+      "Range-76 (Added)": {
+        "file": "New",
+        "startAddress": "0xAF010",
+        "size": "0x1000"
+      },
+      "Range-77 (Added)": {
+        "file": "New",
+        "startAddress": "0xB0010",
+        "size": "0x1000"
+      },
+      "Range-78 (Added)": {
+        "file": "New",
+        "startAddress": "0xB1010",
+        "size": "0x1000"
+      },
+      "Range-79 (Added)": {
+        "file": "New",
+        "startAddress": "0xB2010",
+        "size": "0x1000"
+      },
+      "Range-80 (Added)": {
+        "file": "New",
+        "startAddress": "0xB3010",
+        "size": "0x1000"
+      },
+      "Range-81 (Added)": {
+        "file": "New",
+        "startAddress": "0xB4010",
+        "size": "0x1000"
+      },
+      "Range-82 (Added)": {
+        "file": "New",
+        "startAddress": "0xB5010",
+        "size": "0x1000"
+      },
+      "Range-83 (Added)": {
+        "file": "New",
+        "startAddress": "0xB6010",
+        "size": "0x1000"
+      },
+      "Range-84 (Added)": {
+        "file": "New",
+        "startAddress": "0xB7010",
+        "size": "0x1000"
+      },
+      "Range-85 (Added)": {
+        "file": "New",
+        "startAddress": "0xB8010",
+        "size": "0x1000"
+      },
+      "Range-86 (Added)": {
+        "file": "New",
+        "startAddress": "0xB9010",
+        "size": "0x1000"
+      },
+      "Range-87 (Added)": {
+        "file": "New",
+        "startAddress": "0xBA010",
+        "size": "0x1000"
+      },
+      "Range-88 (Added)": {
+        "file": "New",
+        "startAddress": "0xBB010",
+        "size": "0x1000"
+      },
+      "Range-89 (Added)": {
+        "file": "New",
+        "startAddress": "0xBC010",
+        "size": "0x1000"
+      },
+      "Range-90 (Added)": {
+        "file": "New",
+        "startAddress": "0xBD010",
+        "size": "0x1000"
+      },
+      "Range-91 (Added)": {
+        "file": "New",
+        "startAddress": "0xBE010",
+        "size": "0x1000"
+      },
+      "Range-92 (Added)": {
+        "file": "New",
+        "startAddress": "0xBF010",
+        "size": "0x1000"
+      },
+      "Range-93 (Added)": {
+        "file": "New",
+        "startAddress": "0xC0010",
+        "size": "0x1000"
+      },
+      "Range-94 (Added)": {
+        "file": "New",
+        "startAddress": "0xC1010",
+        "size": "0x1000"
+      },
+      "Range-95 (Added)": {
+        "file": "New",
+        "startAddress": "0xC2010",
+        "size": "0x1000"
+      },
+      "Range-96 (Added)": {
+        "file": "New",
+        "startAddress": "0xC3010",
+        "size": "0x1000"
+      },
+      "Range-97 (Added)": {
+        "file": "New",
+        "startAddress": "0xC4010",
+        "size": "0x1000"
+      },
+      "Range-98 (Added)": {
+        "file": "New",
+        "startAddress": "0xC5010",
+        "size": "0x1000"
+      },
+      "Range-99 (Added)": {
+        "file": "New",
+        "startAddress": "0xC6010",
+        "size": "0x1000"
+      },
+      "Range-100 (Added)": {
+        "file": "New",
+        "startAddress": "0xC7010",
+        "size": "0x1000"
+      },
+      "Range-101 (Added)": {
+        "file": "New",
+        "startAddress": "0xC8010",
+        "size": "0x1000"
+      },
+      "Range-102 (Added)": {
+        "file": "New",
+        "startAddress": "0xC9010",
+        "size": "0x1000"
+      },
+      "Range-103 (Added)": {
+        "file": "New",
+        "startAddress": "0xCA010",
+        "size": "0x1000"
+      },
+      "Range-104 (Added)": {
+        "file": "New",
+        "startAddress": "0xCB010",
+        "size": "0x1000"
+      },
+      "Range-105 (Added)": {
+        "file": "New",
+        "startAddress": "0xCC010",
+        "size": "0x1000"
+      },
+      "Range-106 (Added)": {
+        "file": "New",
+        "startAddress": "0xCD010",
+        "size": "0x1000"
+      },
+      "Range-107 (Added)": {
+        "file": "New",
+        "startAddress": "0xCE010",
+        "size": "0x1000"
+      }
+    },
+    "writeRegion": [
+      {
+        "entryOwners": [
+          "Dictionary",
+          "Dialogue"
+        ],
+        "writeableAddressRanges": [
+          "Range-00",
+          "Range-01",
+          "Range-02",
+          "Range-03",
+          "Range-04",
+          "Range-05",
+          "Range-06",
+          "Range-07",
+          "Range-08",
+          "Range-09",
+          "Range-10",
+          "Range-11",
+          "Range-12",
+          "Range-13",
+          "Range-14",
+          "Range-15",
+          "Range-16",
+          "Range-17",
+          "Range-18",
+          "Range-19",
+          "Range-20",
+          "Range-21",
+          "Range-22",
+          "Range-23",
+          "Range-24",
+          "Range-25",
+          "Range-26",
+          "Range-27",
+          "Range-28",
+          "Range-29",
+          "Range-30",
+          "Range-31",
+          "Range-32",
+          "Range-33 (Added)",
+          "Range-34 (Added)",
+          "Range-35 (Added)",
+          "Range-36 (Added)",
+          "Range-37 (Added)",
+          "Range-38 (Added)",
+          "Range-39 (Added)",
+          "Range-40 (Added)",
+          "Range-41 (Added)",
+          "Range-42 (Added)",
+          "Range-43 (Added)",
+          "Range-44 (Added)",
+          "Range-45 (Added)",
+          "Range-46 (Added)",
+          "Range-47 (Added)",
+          "Range-48 (Added)",
+          "Range-49 (Added)",
+          "Range-50 (Added)",
+          "Range-51 (Added)",
+          "Range-52 (Added)",
+          "Range-53 (Added)",
+          "Range-54 (Added)",
+          "Range-55 (Added)",
+          "Range-56 (Added)",
+          "Range-57 (Added)",
+          "Range-58 (Added)",
+          "Range-59 (Added)",
+          "Range-60 (Added)",
+          "Range-61 (Added)",
+          "Range-62 (Added)",
+          "Range-63 (Added)",
+          "Range-64 (Added)",
+          "Range-65 (Added)",
+          "Range-66 (Added)",
+          "Range-67 (Added)",
+          "Range-68 (Added)",
+          "Range-69 (Added)",
+          "Range-70 (Added)",
+          "Range-71 (Added)",
+          "Range-72 (Added)",
+          "Range-73 (Added)",
+          "Range-74 (Added)",
+          "Range-75 (Added)",
+          "Range-76 (Added)",
+          "Range-77 (Added)",
+          "Range-78 (Added)",
+          "Range-79 (Added)",
+          "Range-80 (Added)",
+          "Range-81 (Added)",
+          "Range-82 (Added)",
+          "Range-83 (Added)",
+          "Range-84 (Added)"
+        ]
+      }
+    ]
+  }
 }

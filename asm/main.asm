@@ -9,6 +9,11 @@ define BtleSumSpecControlCode1	$67
 define BtleSumSpecControlCode2	#$67
 define BattleSumTxtId			$180
 
+define VoiceCounterMask			#$01
+define MouthMask				#$01
+
+define CustVoiceCounter			$02
+
 //==============================
 //PARENT SECTOR
 //==============================
@@ -26,7 +31,7 @@ db $70, $00, $10
 //Data
 bank 56
 org $1010 // 0xE1010
-incbin "ASM\Timing_Screen_Data_1.bin"
+incbin "asm/tilemap/timing screen data 1.bin"
 
 //==============================
 //BANK 16
@@ -57,9 +62,18 @@ db $4E,$16,$0A
 //==============================
 banksize $4000 //Start 0x48000
 bank 18
+
 //==============================
-//Password text palette fix
+//Ch6: Azusa bedroom
+//==============================
+// "About Azusa" => "Azusa"
+org $00490 // 0x00048490
+dw $0063
+
+//==============================
+//Password chr bank change
 //(Childless)
+// Change what CHR bank to load in password screen
 //==============================
 //Bank ID 1
 org $171A // 0x4971A
@@ -72,20 +86,8 @@ db $80
 //(Childless)
 //==============================
 org $2DD4 //0x4add4
-db $ea //Originally $f7
+db $00 //Originally $f7
 
-//==============================
-//Azusa double choice fix
-//==============================
-//0x34D to 4A9D1
-org $29D1
-db $4D, $03
-//"About Azusa" in entry 779
-//0x30B to 443A6
-banksize $4000
-bank 17
-org $03A6
-db $0B, $03
 //==============================
 //BANK 19
 //==============================
@@ -95,7 +97,7 @@ bank 19
 //Game over text (Childless)
 //==============================
 org $0CC0 // 0x4CCC0
-incbin "ASM\Game_Over_Text_Data.bin"
+incbin "asm/tilemap/game over text data.bin"
 //==============================
 //Password white text
 //(Childless)
@@ -103,16 +105,16 @@ incbin "ASM\Game_Over_Text_Data.bin"
 org $24FC // 0x4E4FC
 db $FE
 org $2503 // 0x4E503
-incbin "ASM\White_Text_Data_2.bin"
+incbin "asm/tilemap/white text data 2.bin"
 org $2531 // 0x4E531
-incbin "ASM\White_Text_Data_3.bin"
+incbin "asm/tilemap/white text data 3.bin"
 
 //==============================
 //Ch 2: Pilot reveal pause removal (Script Engine)
 //(Childless)
 //==============================
 org $12A2 //0x4D2A2
-db $ea
+db $00
 
 //==============================
 // Ch 5
@@ -132,11 +134,7 @@ db $b2
 //at line #2772:
 //"They're(LINE)coming right for us!(LINE)"
 //#$4d134
-org $1134; fill $85, $ea //blank out everything
-org $1134
-db $2B
-db $25
-db $3C,$80,$00 //skip over the blanked area (always branches)
+org $1134; fill $85, $00 //blank out everything
 
 //==============================
 //BANK 20
@@ -171,7 +169,7 @@ db $FD
 //==============================
 //BANK 29
 //==============================
-banksize $4000
+banksize $4000 // 0x78000
 bank 29
 //==============================
 //Blinking text palettes A
@@ -247,7 +245,8 @@ LDA #$01
 //Text speed
 //(Top dialogue box) A
 //==============================
-org $3012 // 0x7B012
+org $3A12; fill $05, $ea
+org $3A12 // 0x7BA12
 JMP TextSpeedReport
 //==============================
 //Emergency countdown fix
@@ -288,53 +287,24 @@ JMP MaxBSpeed
 //==============================
 org $3A07 // 0x7BA07
 JSR SkipVoiceReport
+
+//==============================
+//Mouth flap adjust
 //==============================
 //Characters won't move their
 //mouth during ellipsis and long 
 //hyphen
-//==============================
 //>1E:9986: B1 1C     LDA ($1C),Y @ $9BB0 = #$22
 //The old mouth values for !,?,etc are there for 
 //stuff on the top row, but those
 //characters will never be spoken 
 //So I'll leave them alone.
 
-//make the ellipsis be stored as 
-//mouth moving characters so we can override
-//this later. 
-//It prevents puncation from registering as a voice
-//when coming before ellipses.
-//(OVERRIDE #1)
-//Ellipsis
-org $3AEB // 0x7BAEB
-//db $03, $03
+// INSaeijs
 
-//Long hyphen
-org $3AEF //0x7BAEF
-db $03, $03, $03, $03, $03, $03
-
-
-//Silencing puncation messes up the mouth movments
-//of certain lines with one word with the mouth patches
-//we've done
-//Question mark
-org $3BC0 //0x7bbc0
-//db $03
-
-//Single bang
-org $3BC1 //0x7bbc1
-//db $03
-
-//Double bang
-org $3BC2 //0x7bbc2
-//db $03
-
-//no silencing sweat emojis either, unlike
-//the original JP version. Changed last in line 1503
-//to not be fully composed of ellipses
-//Sweat
-org $3BBA //0x7BBBA
-//db $03
+org $3C50 // 0x0007BC50
+incbin "asm/mouth/table - lo.bin"
+incbin "asm/mouth/table - hi.bin"
 
 //==============================
 //Scrolling text speed C (when linebreaks are used)
@@ -379,18 +349,17 @@ db $81 //Option #04/#08
 //1E:86F1: BD 2D 8A  LDA $8A2D,X @ @8A2D = $42
 
 //==============================
+// Menu row blanking expansion
+//==============================
+org $260F // 0x7A5FF
+lda #$20
+
+//==============================
 //Slow Mouth A
 //==============================
+org $73A2b; fill $0B, $ea
 org $73A2b //0x7BA2b
 jmp SlowMouth
-nop
-nop
-nop
-nop
-nop
-nop
-nop
-nop
 
 //==============================
 //BANK 31
@@ -424,9 +393,9 @@ CMP #$1F
 //(Childless)
 //==============================
 org $091B // 0x7C91B
-incbin "ASM\Orange_Text_Data_1.bin"
+incbin "asm/tilemap/orange text data 1.bin"
 org $09B3 // 0x7C9B3
-incbin "ASM\Orange_Text_Data_2.bin"
+incbin "asm/tilemap/orange text data 2.bin"
 //==============================
 //Input code range fix 2
 //==============================
@@ -764,13 +733,13 @@ JMP $8E29
 //Text speed (Top dialogue box) B
 //==============================
 TextSpeedReport:
-PLA
+lda $4b
 CMP #$01
 BEQ exit
 LSR
+LSR
 exit:
-STA $4B
-JMP $9005
+JMP $E1DD
 //==============================
 //Portrait shadows fix
 //==============================
@@ -791,7 +760,6 @@ RTS
 //Skip voice B
 //==============================
 SkipVoice:
-
 txa
 pha
 
@@ -801,14 +769,14 @@ ldx $10
 lda $04A9,x
 cmp #$FE
 beq dontIncrement
-INC $02
+INC {CustVoiceCounter}
 dontIncrement:
 
 pla
 tax
 
-LDA $02
-AND #$03
+LDA {CustVoiceCounter}
+AND {VoiceCounterMask}
 BEQ ExitSkipVoice
 RTS
 ExitSkipVoice:
@@ -819,7 +787,7 @@ JMP $9A44
 SkipVoiceReport:
 INC $05
 LDA $05
-AND #$03
+AND {VoiceCounterMask}
 BEQ ExitSkipVoiceReport
 RTS
 ExitSkipVoiceReport:
@@ -837,13 +805,11 @@ BEQ LoadOriginalSpeed
 
 LoadMaxSpeed:
 LDA #$00
-STA $2E
 JMP $99B8
 
 //Speed provided by text speed patches
 LoadOriginalSpeed:
-LDA $FE
-STA $2E
+LDA $2E
 JMP $99B1
 
 //==============================
@@ -902,26 +868,11 @@ RTS
 //Slow Mouth B
 //==============================
 SlowMouth:
-lda $04A9
-
-cmp #$1b				//;[...]	(OVERRIDE #1)
-beq OpenMouth_Override
-cmp #$1c				//;[..]		(OVERRIDE #1)
-beq OpenMouth_Override_Reset
-
-LDA $02
-AND #$01
+LDA {CustVoiceCounter}
+AND {MouthMask}
 BEQ OpenMouth
-OpenMouth_Override:
 jmp $9A26
 
-OpenMouth_Override_Reset:
-lda #$00
-sta $02
-
-jmp $9A26
-
-OpenMouth_Override:
 OpenMouth:
 LDA $07ED,x
 AND #$3F
@@ -1095,7 +1046,6 @@ AND #$0F
 LSR
 LSR
 STA $2E
-STA $FE
 JMP {LastBankRestore}
 //==============================
 //Password text 8x16 B
@@ -1124,7 +1074,7 @@ BCS SkipSpace
 CMP #$20
 BCC SkipSpace
 ///////////////////////////////////
-//"Let's debug!" exception handling
+//"Let's debug*" exception handling
 //Check star character
 CMP #$AE
 BNE SkipException
@@ -1153,7 +1103,6 @@ LDA $2E
 AND #$0F
 LSR
 STA $2E
-STA $FE
 JMP {LastBankRestore}
 //==============================
 //Input code range fix 2
@@ -1277,3 +1226,38 @@ LSR
 LSR
 TAX
 JMP {LastBankRestore}
+
+db "Fan translation team hidden credits:                                   "
+db "                                                                       "
+db "--Main Team--                                                          "
+db "FCandChill: Initial ASM work, utilities, localizer, proofreader, manual"
+db "Her-saki: Advanced ASM work, font, initial translation                 "
+db "TheMajinkZenki: SNES translation                                       "
+db "                                                                       "
+db "--Support--                                                            "
+db "tashi: Character identification                                        "
+db "Matatabi#8541: Onspot translation checks                               "
+db "danke#6948: Onspot translation checks, localization feedback           "
+db "kartes: Maker of the script dumper tool in RHDN's abandoned section    "
+db "Pennywise#4430: Localization feedback                                  "
+db "kaio#4229: Localization feedback                                       "
+db "HGwells628#6941: Localization feedback                                 "
+db "Aerdan#3244: Localization feedback                                     "
+db "Kajitani-Eizan#9804: Localization feedback                             "
+db "Gideon-BAR-Web#7436: Localization feedback                             "
+db "Kadalyn#2959 (YasaSheep): Manual feedback                              "
+db "inactive#4484: Was there                                               "
+db "mictlantecuhtle, bikerspade: iNES 2.0 request                          "
+db "                                                                       "
+db "--NES Beta Testers--                                                   "
+db "cccmar#6676: Typos, suggestions, onspot translations                   "
+db "blueskyrunner#6087: Typos, suggestions                                 "
+db "marklincadet#0878: Typos, suggestions                                  "
+db "ppltoast#5820: Beta tester                                             "
+db "jekuthiel#9153: Real hardware tester                                   "
+db "MrNorbert1994#5955: Header fix                                         "
+db "Satoshi_Matrix#4487: Suggested a slow speed patch                      "
+db "ParadiseAlive#3928: Was there                                          "
+db "xWhyohwhyx#4581: Was there                                             "
+db "                                                                       "
+db "For non-profit                                                         "
