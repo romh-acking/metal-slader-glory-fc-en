@@ -146,6 +146,9 @@ Feel free to remove these control codes changes or adjust them to suit your need
 Removing the end quotes will messe with various character animations. Most apparent are the character's mouths never closing. Certain character animations won't play at times and in rare instances obvious onscreen graphical glitching will occur.
 
 ## Changelog
+* 2025 September 1st, 1.3
+    * One of the passwords incorrectly displayed as "Let's go to Colony 35" instead of "Let's go back to Colony 35".
+	* Thanks to @solrocknroll for spotting this.
 * 2025 March 10th, 1.2
 	* Syncing with SNES translation release changes
 		* Script changes
